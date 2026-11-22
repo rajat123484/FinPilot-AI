@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-fintech-dark text-slate-100 font-sans antialiased;
+    background-color: #070D1E;
+    color: #F1F5F9;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070D1E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+.fintech-card {
+  background: linear-gradient(135deg, rgba(13, 24, 46, 0.8) 0%, rgba(9, 18, 36, 0.9) 100%);
+  border: 1px solid rgba(30, 41, 59, 0.7);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+}
+
+.fintech-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fintech-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.6), 0 0 20px -5px rgba(56, 189, 248, 0.15);
+}
+
+.fintech-glow-text {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.glass-nav {
+  background: rgba(7, 13, 30, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
